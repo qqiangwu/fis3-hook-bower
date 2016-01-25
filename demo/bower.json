@@ -1,0 +1,25 @@
+{
+  "name": "default",
+  "description": "Default template for fis scaffold",
+  "main": "index.js",
+  "authors": [
+    "fex"
+  ],
+  "license": "BSD",
+  "keywords": [
+    "fis",
+    "scaffold"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.15"
+  }
+}
