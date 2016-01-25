@@ -22,6 +22,13 @@ fis.hook('bower', {
 });
 ```
 
+## 使用
+在代码中声明依赖即可. 会自动查找到bower中main所指定的文件, 并且同时载入所有依赖.
+
+```
+// @require angular
+```
+
 ## 示例
 + 见demo文件夹
 + [复杂示例](https://github.com/qqiangwu/reins-ssh)
