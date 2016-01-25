@@ -85,8 +85,10 @@ function injectBowerDeps(info) {
 
     if (pkg) {
         var deps = _resolveDeps(pkg);
-        var m = fis.compile.lang.jsRequire.wrap(deps);
-        info.content += m;
+
+        deps.forEach(function(v){
+            info.content += '// ' + fis.compile.lang.jsRequire.wrap(v);
+        });
     }
 }
 

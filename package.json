@@ -1,6 +1,6 @@
 {
   "name": "fis3-hook-bower",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Bower module integraion for fis3",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "url": "https://github.com/qqiangwu/fis3-hook-bower"
   },
   "keywords": [
+    "fis",
     "fis3",
     "bower",
     "module"
