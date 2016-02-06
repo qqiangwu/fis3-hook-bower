@@ -1,20 +1,26 @@
 # fis3-hook-bower
 Bower module integraion for fis3.
 
-Fis3是一个很优秀的网络前端编译器. 而模块化问题又是所有前端项目避不开的问题. Bower是一个包含重多包的管理平台, 虽然其包的质量参差不齐, 但也聊胜于无了.
+Fis3 is an excellent frontend compiler. In frontend engineering, modularity plays an important role. It would be better to reused existing packages. Bower is a good candidate.
 
-此Hook只是一个很简单的对Bower模块的一个引用. 其语义是Best Effort.
+This hook will help you cope with bower dependencies. But it could be better to use npm. Also see [fis3-hook-npm](https://www.npmjs.com/package/fis3-hook-npm).
 
-## 安装
+## Installation
 ```
 npm install fis3-hook-bower
 ```
 
-## 配置
-由于bower_components通常都特别在, 所以最好在一开始就不要将其包含在`project.files`中.
+or
 
 ```
-// 默认使用bower_components
+npm install fis3-hook-bower -g
+```
+
+## Configuration
+Generally `bower_components/` is very large, so it is a good idea to exclude it from your `project.files`.
+
+```
+// By default: lookup packages in bower_components
 fis.hook('bower');
 
 // or
@@ -24,16 +30,19 @@ fis.hook('bower', {
 });
 ```
 
-## 使用
-在代码中声明依赖即可. 会自动查找到bower中main所指定的文件, 并且同时载入所有依赖.
+## Usage
+Declare dependencies in your file as follows, the hook will automatically load all dependencies recursively:
 
 ```
 // @require angular
+// @require angular-route
+
+var module = angular.module('app', ['ngRoute']);
 ```
 
-## 示例
-+ 见demo文件夹
-+ [复杂示例](https://github.com/qqiangwu/reins-ssh)
+## Demo
++ See `demo/`
++ [Simple Blog](https://github.com/qqiangwu/reins-ssh)
 
 ## TODO
-+ 处理`bower.json`中main为数组的情况
++ What if `bower.json` is an array?
