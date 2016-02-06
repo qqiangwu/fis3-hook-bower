@@ -1,4 +1,6 @@
 # fis3-hook-bower
+[![Build Status](https://travis-ci.org/qqiangwu/fis3-hook-bower.svg?branch=master)](https://travis-ci.org/qqiangwu/fis3-hook-bower)
+
 Bower module integraion for fis3.
 
 Fis3 is an excellent frontend compiler. In frontend engineering, modularity plays an important role. It would be better to reused existing packages. Bower is a good candidate.

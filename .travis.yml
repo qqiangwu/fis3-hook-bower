@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+deploy:
+  provider: npm
+  email: wqzhiep@gmail.com
+  api_key:
+    secure: 4CNGUgua4mLmkf2NqFOV/lNkbT+wx8XDWoV3dYfhJ3ioQRczGZqqxPSZEGflnxYGRTp1f3bRDNzBoj/lVH7McwlcKFqCBIQNjjTkFajMo4v7IbmnemHsePq7jg3isIzuDzVCUUBebd1wn7FXxlf9Kt8FPtfcZQn9rRE3uNgAIZsU7ar9o4i1RPy9v0OK2Y3T9YKseOkiuA8F4wJA7LA6pzp5/ceMoiy7yC9BOTJCGwg5MbPHmXU1Rlx3f2jSLkEYS2YEB8Ohh8mokeaW7U6EIWtSMdQYEbNBpziuPz2ilE21vDFogLmWbYIz1s90lWu03OY14DGNbhcDVQixUsCsa/7m2ymI6olQD7CSBFyYQVQWXJ3o5EB+aPFU4I+7EWn8fIeDefInrwm0qH6oTEfmADNB6nVZ07CEA9whBV1zKzdOhQGoRUVtWsaxvkXKugcabpAIuICtAxPrugyKkek/XrsuRLJaSOkUMb2Sm/b+D6NiBPuYQBw8U1VbpAmqTh/dX9mvvY4CAa0vX4oWQgb+U/ya7p9jB5Gep4GvxpUTicMVmhlW7MGe9p9/84k60DysDwDI+S1ZR9ct/83LJDFw4xXrUhKm9/apnYBn2GhAhODiY3njN/Shqqy7esSxtC6kKuoBh9mu/z4FNHfL14Dcsd2uVW28r3cBob7qSgbfbKw=
+  on:
+    tags: true
+    repo: qqiangwu/fis3-hook-bower

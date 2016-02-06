@@ -6,8 +6,7 @@ fis.hook('bower', {
 
 fis.match('::package', {
     postpackager: [
-        fis.plugin('loader'),
-        fis.plugin('inline')
+        fis.plugin('loader')
     ],
     packager: fis.plugin('map', {
         useTrack: false

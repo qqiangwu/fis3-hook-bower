@@ -56,26 +56,27 @@ function resolveBowerDeps(info, file) {
     if (m) {
         var cName = m[1];
         var subpath = m[2];
-        var pkg = _readPkg(cName);
 
-        if (!subpath && pkg) {
-            if (pkg.main) {
+        if (subpath) {
+            resolved = _find(_bowerLocate(info.rest), fis.project.getProjectPath());
+        } else {
+            var pkg = _readPkg(cName);
+
+            if (pkg && pkg.main) {
                 var target = _bowerLocate(cName, pkg.main);
                 resolved = _find(target, fis.project.getProjectPath());
             }
+        }
 
-            if (resolved && resolved.file) {
-                var f = resolved.file;
-                var id = info.rest;
+        if (resolved && resolved.file) {
+            var f = resolved.file;
+            var id = info.rest;
 
-                // FIXME    is this a bug?
-                fis.match(f.id, { id: id });
+            // FIXME    is this a bug?
+            fis.match(f.id, { id: id });
 
-                info.id = id;
-                info.file = f;
-            } else {
-                fis.log.warn('Invalid bower package', cName);
-            }
+            info.id = id;
+            info.file = f;
         }
     }
 }
@@ -84,10 +85,13 @@ function injectBowerDeps(info) {
     var pkg = _packages[info.file.id];
 
     if (pkg) {
+        fis.log.debug('[Bower] inject deps:', info.file.id);
+
         var deps = _resolveDeps(pkg);
 
         deps.forEach(function(v){
-            info.content += '// ' + fis.compile.lang.jsRequire.wrap(v);
+            info.content += '// @require {}\n'.
+                replace('{}', fis.compile.lang.jsRequire.wrap(v));
         });
     }
 }
